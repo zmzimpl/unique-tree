@@ -3,7 +3,7 @@
 /test/
 
 # top level source
-my-element.js
-my-element.js.map
-my-element.d.ts
-my-element.d.ts.map
+unique-tree.js
+unique-tree.js.map
+unique-tree.d.ts
+unique-tree.d.ts.map

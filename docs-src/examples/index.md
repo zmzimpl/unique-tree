@@ -1,20 +1,20 @@
 ---
 layout: example.11ty.cjs
-title: <my-element> ⌲ Examples ⌲ Basic
+title: <unique-tree> ⌲ Examples ⌲ Basic
 tags: example
 name: Basic
 description: A basic example
 ---
 
 <style>
-  my-element p {
+  unique-tree p {
     border: solid 1px blue;
     padding: 8px;
   }
 </style>
-<my-element>
+<unique-tree>
   <p>This is child content</p>
-</my-element>
+</unique-tree>
 
 <h3>CSS</h3>
 
@@ -28,7 +28,7 @@ description: A basic example
 <h3>HTML</h3>
 
 ```html
-<my-element>
+<unique-tree>
   <p>This is child content</p>
-</my-element>
+</unique-tree>
 ```

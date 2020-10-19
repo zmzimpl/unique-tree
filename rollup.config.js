@@ -18,9 +18,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'my-element.js',
+  input: 'unique-tree.js',
   output: {
-    file: 'my-element.bundled.js',
+    file: 'unique-tree.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {
