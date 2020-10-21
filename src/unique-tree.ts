@@ -2,8 +2,8 @@ import { LitElement, customElement, html } from "lit-element";
 import { uniqueTreeStyle } from "./unique-tree-style";
 
 const rootTemplate = html`
-    <div class="ui-tree">
-        <ul >
+    <div >
+        <ul class="ui-tree">
             <li>Plants
                 <ul>
                     <li>Flowers
