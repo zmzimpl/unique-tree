@@ -1,7 +1,9 @@
 import { LitElement, customElement, html } from "lit-element";
 import { uniqueTreeStyle } from "./unique-tree-style";
+import { UniqueTreeNode } from "./unique-tree-model";
 
-const rootTemplate = html`
+const rootTemplate = (nodes: UniqueTreeNode[]) => {
+    return html`
     <div >
         <ul class="ui-tree">
             <li>Plants
@@ -50,16 +52,51 @@ const rootTemplate = html`
                 </ul>
             </li>
         </ul>
-        </div>
-`;
+    `
+};
+
+function recursionNode(nodes: UniqueTreeNode[]) {
+    let template = ``;
+    nodes.forEach(node => {
+        template += `
+            <li>
+                ${node.title}
+                ${node && node.children && node.children.length > 0 ? recursionNode(node.children) : ''}
+            </li>
+        ` 
+    })
+    return template;
+}
+
+function dig(path: string = '0', level: number = 3) {
+    const list = [];
+    for (let i = 0; i < 10; i += 1) {
+      const key = `${path}-${i}`;
+      const treeNode: UniqueTreeNode = {
+        title: key,
+        key,
+        children: []
+      };
+  
+      if (level > 0) {
+        treeNode.children = dig(key, level - 1);
+      }
+  
+      list.push(treeNode);
+    }
+    return list;
+  }
+  
+const treeData = dig();
 
 @customElement('unique-tree')
 export class UniqueTree extends LitElement { 
-
+    
     render() {
+        console.log(treeData);
         return html`
         ${uniqueTreeStyle}
-        ${rootTemplate}
+        ${rootTemplate(treeData)}
         `;
     }
 }
@@ -68,4 +105,4 @@ declare global {
     interface HTMLElementTagNameMap {
       'unique-tree': UniqueTree;
     }
-  }
+}
