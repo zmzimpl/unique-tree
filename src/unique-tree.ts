@@ -55,18 +55,18 @@ const rootTemplate = (nodes: UniqueTreeNode[]) => {
     `
 };
 
-function recursionNode(nodes: UniqueTreeNode[]) {
-    let template = ``;
-    nodes.forEach(node => {
-        template += `
-            <li>
-                ${node.title}
-                ${node && node.children && node.children.length > 0 ? recursionNode(node.children) : ''}
-            </li>
-        ` 
-    })
-    return template;
-}
+// function recursionNode(nodes: UniqueTreeNode[]) {
+//     let template = ``;
+//     nodes.forEach(node => {
+//         template += `
+//             <li>
+//                 ${node.title}
+//                 ${node && node.children && node.children.length > 0 ? recursionNode(node.children) : ''}
+//             </li>
+//         ` 
+//     })
+//     return template;
+// }
 
 function dig(path: string = '0', level: number = 3) {
     const list = [];
